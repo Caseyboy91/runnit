@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Header from "./components/Header/Header";
+import Home from "./pages/Home/Home";
+import Bar from "./pages/Bar/Bar";
+import Concession from "./pages/Concession/Concession";
+import Merch from "./pages/Merch/Merch";
+import NotFound from "./pages/NotFound/NotFound";
+import Footer from "./components/Footer/Footer";
+import "./App.scss";
 
 function App() {
+  document.title = "Runnit";
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/bar" element={<Bar />} />
+        <Route path="/concession" element={<Concession />} />
+        <Route path="/merch" element={<Merch />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+      <Footer />
+    </BrowserRouter>
   );
 }
 
