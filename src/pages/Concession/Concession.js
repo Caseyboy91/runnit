@@ -34,6 +34,7 @@ const Concession = () => {
         {concessionData.map((item) => {
           return (
             <div key={item.id} className="item__container">
+              <h2 className="item__name">{item.name}</h2>
               <img
                 className="item__image"
                 src={item.image}

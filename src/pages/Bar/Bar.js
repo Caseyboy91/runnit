@@ -41,9 +41,6 @@ const Bar = () => {
                 <h3 className="item__description">{item.description}</h3>
                 <h3 className="item__price">{item.price}</h3>
                 <div className="quantity__container">
-                  <button className="quantity__add">+</button>
-                  <div className="quantity__count"></div>
-                  <button className="quantity__subtract">-</button>
                   <button className="quantity__add-to-cart">Add To Cart</button>
                 </div>
               </div>
