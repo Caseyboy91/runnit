@@ -1,5 +1,5 @@
 import { createContext, useState } from "react";
-import { item } from "../src/pages/Bar/Bar";
+// import { item } from "./productsStore";
 // how do i get data over
 
 export const CartContext = createContext({
