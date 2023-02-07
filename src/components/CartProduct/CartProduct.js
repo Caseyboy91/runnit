@@ -3,17 +3,17 @@ import { CartContext } from "../../CartContext";
 import { useContext } from "react";
 // import {getProductData} from "../productsStore"
 
-function CartProduct({ id, quantity }) {
+function CartProduct({ quantity, item }) {
   const cart = useContext(CartContext);
-  //   const itemData = getItemData(id);
+  const itemData = item.id;
+  console.log(item);
 
   return (
     <>
-      {/* <h3>{itemData.title}</h3> */}
-      {/* <img src={itemData.image} alt={itemData.title} /> */}
-      <p>{quantity} total</p>
-      {/* <p>${(quantity * itemData.price).toFixed(2)}</p> */}
-      <Button size="sm" onClick={() => cart.deleteFromCart(id)}>
+      <h3>{item.name}</h3>
+      <h5>{quantity} total</h5>
+      <h6>${(quantity * item.price).toFixed(2)}</h6>
+      <Button size="sm" onClick={() => cart.deleteFromCart(item.id)}>
         Remove
       </Button>
       <hr></hr>

@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { Row, Col } from "react-bootstrap";
 import ItemCard from "../../components/ItemCard/ItemCard";
-import "./Bar.scss";
 
 const Bar = () => {
   useEffect(() => {
@@ -36,7 +35,7 @@ const Bar = () => {
         </h1>
       </header>
       <main>
-        <Row xs={1} md={3} lg={6} className="g-4">
+        <Row xs={2} md={4} lg={6} className="g-4">
           {barData.map((item) => (
             <Col align="center" key={item.id}>
               <ItemCard item={item} />

@@ -1,6 +1,5 @@
 import { createContext, useState } from "react";
-// import { item } from "./productsStore";
-// how do i get data over
+import axios from "axios";
 
 export const CartContext = createContext({
   items: [],
@@ -8,12 +7,12 @@ export const CartContext = createContext({
   addOneToCart: () => {},
   removeOneFromCart: () => {},
   deleteFromCart: () => {},
-  getTotalCost: () => {},
+  // getTotalCost: () => {},
 });
 
 export function CartProvider({ children }) {
   const [cartItems, setCartItems] = useState([]);
-
+  console.log(cartItems);
   // [{id: 1, quantity:2}]
 
   function getItemQuantity(id) {
@@ -25,8 +24,11 @@ export function CartProvider({ children }) {
     return quantity;
   }
 
-  function addOneToCart(id) {
+  async function addOneToCart(id) {
     const quantity = getItemQuantity(id);
+
+    let { data: barItems } = await axios.get("/bar");
+    const item = barItems.find((item) => item.id === id);
 
     if (quantity === 0) {
       setCartItems([
@@ -34,6 +36,7 @@ export function CartProvider({ children }) {
         {
           id: id,
           quantity: 1,
+          item,
         },
       ]);
     } else {
@@ -71,14 +74,14 @@ export function CartProvider({ children }) {
     );
   }
 
-  //   function getTotalCost() {
-  //     let totalCost = 0;
-  //     cartItems.map((cartItem) => {
-  //       const itemData = getItemData(cartItem.id);
-  //       totalCost += itemData.price * cartItem.quantity;
-  //     });
-  //     return totalCost;
-  //   }
+  // function getTotalCost() {
+  //   let totalCost = 0;
+  //   cartItems.map((cartItem) => {
+  //     const itemData = getProducts(cartItem.id);
+  //     totalCost += itemData.price * cartItem.quantity;
+  //   });
+  //   return totalCost;
+  // }
 
   const contextValue = {
     items: cartItems,

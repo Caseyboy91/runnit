@@ -14,7 +14,7 @@ const Header = () => {
 
   return (
     <>
-      <Navbar expand="sm">
+      <Navbar>
         <Navbar.Brand href="/">Home</Navbar.Brand>
         <Navbar.Toggle />
         <Navbar.Collapse className="justify-content-end">
@@ -29,15 +29,15 @@ const Header = () => {
           {itemsCount > 0 ? (
             <>
               <p>Items in your cart:</p>
-              {cart.items.map((currentItem, idx) => (
+              {cart.items.map((currentItem) => (
                 <CartProduct
-                  key={idx}
-                  image={currentItem.image}
-                  id={currentItem.id}
+                  key={currentItem.id}
+                  item={currentItem.item}
                   quantity={currentItem.quantity}
                 ></CartProduct>
               ))}
-              {/* <h2>Total: {cart.getTotalCost().toFixed(2)}</h2> */}
+
+              <h2>{`Total: $ ${getTotalCost(cart.items).toFixed(2)}`}</h2>
               <Button variant="success">Purchase items!</Button>
             </>
           ) : (
@@ -48,5 +48,15 @@ const Header = () => {
     </>
   );
 };
+
+function getTotalCost(items) {
+  return items.reduce((sum, item) => {
+    const unitCost = item.item.price;
+    return sum + unitCost * item.quantity;
+  }, 0);
+
+  console.log(items);
+  return 234;
+}
 
 export default Header;
