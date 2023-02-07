@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { Row, Col } from "react-bootstrap";
+import ItemCard from "../../components/ItemCard/ItemCard";
 import "./Bar.scss";
 
 const Bar = () => {
@@ -13,7 +15,7 @@ const Bar = () => {
     const getBarItems = async () => {
       try {
         let { data: barItems } = await axios.get("/bar");
-        console.log(barItems);
+
         setBarData(barItems);
       } catch (error) {
         console.error(error);
@@ -29,24 +31,18 @@ const Bar = () => {
   return (
     <section>
       <header>
-        <h1 className="title">Bar</h1>
+        <h1 align="center" className="p-3">
+          Bar
+        </h1>
       </header>
       <main>
-        <section className="item">
-          {barData.map((item) => {
-            return (
-              <div key={item.id} className="item__container">
-                <h2 className="item__name">{item.name}</h2>
-                <img className="item__image" src={item.image} alt={item.name} />
-                <h3 className="item__description">{item.description}</h3>
-                <h3 className="item__price">{item.price}</h3>
-                <div className="quantity__container">
-                  <button className="quantity__add-to-cart">Add To Cart</button>
-                </div>
-              </div>
-            );
-          })}
-        </section>
+        <Row xs={1} md={3} lg={6} className="g-4">
+          {barData.map((item) => (
+            <Col align="center" key={item.id}>
+              <ItemCard item={item} />
+            </Col>
+          ))}
+        </Row>
       </main>
     </section>
   );
