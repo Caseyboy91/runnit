@@ -10,6 +10,24 @@ const Header = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  const checkout = async () => {
+    await fetch("http://localhost:5050/checkout", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ items: cart.items }),
+    })
+      .then((response) => {
+        return response.json();
+      })
+      .then((response) => {
+        if (response.url) {
+          window.location.assign(response.url);
+        }
+      });
+  };
+
   const itemsCount = cart.items.reduce((sum, item) => sum + item.quantity, 0);
 
   return (
@@ -38,7 +56,9 @@ const Header = () => {
               ))}
 
               <h2>{`Total: $ ${getTotalCost(cart.items).toFixed(2)}`}</h2>
-              <Button variant="success">Purchase items!</Button>
+              <Button variant="success" onClick={checkout}>
+                Purchase items!
+              </Button>
             </>
           ) : (
             <h2>There are no items in your cart!</h2>
@@ -54,9 +74,6 @@ function getTotalCost(items) {
     const unitCost = item.item.price;
     return sum + unitCost * item.quantity;
   }, 0);
-
-  console.log(items);
-  return 234;
 }
 
 export default Header;
