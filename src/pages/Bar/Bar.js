@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { Row, Col } from "react-bootstrap";
 import ItemCard from "../../components/ItemCard/ItemCard";
+import "./Bar.scss";
 
 const Bar = () => {
   useEffect(() => {
@@ -24,17 +25,17 @@ const Bar = () => {
   }, []);
 
   if (!barData) {
-    return <div>Loading Bar ...</div>;
+    return <div>Loading Items ...</div>;
   }
 
   return (
     <section>
-      <header>
-        <h1 align="center" className="p-3">
-          Bar
+      <header className="container">
+        <h1 align="center" className="p-3 page-title">
+          Items
         </h1>
       </header>
-      <main>
+      <main className="container">
         <Row xs={2} md={4} lg={6} className="g-4">
           {barData.map((item) => (
             <Col align="center" key={item.id}>

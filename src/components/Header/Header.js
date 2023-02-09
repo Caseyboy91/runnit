@@ -1,8 +1,17 @@
 import { Link } from "react-router-dom";
-import { Button, Container, Navbar, Modal } from "react-bootstrap";
+import {
+  Button,
+  Container,
+  Navbar,
+  Modal,
+  Form,
+  FormLabel,
+} from "react-bootstrap";
 import { useState, useContext } from "react";
 import { CartContext } from "../../CartContext";
 import CartProduct from "../CartProduct/CartProduct";
+import logo from "../../Assets/images/Runnit-1.png";
+import "./Header.scss";
 
 const Header = () => {
   const cart = useContext(CartContext);
@@ -31,41 +40,77 @@ const Header = () => {
   const itemsCount = cart.items.reduce((sum, item) => sum + item.quantity, 0);
 
   return (
-    <>
+    <header className="container ">
       <Navbar>
-        <Navbar.Brand href="/">Home</Navbar.Brand>
+        <Navbar.Brand href="/">
+          <img src={logo} alt="runnit" className="logo" />
+        </Navbar.Brand>
         <Navbar.Toggle />
         <Navbar.Collapse className="justify-content-end">
-          <Button onClick={handleShow}>Cart ({itemsCount}) Items</Button>
+          <Button className="button-header btn-lg" onClick={handleShow}>
+            <h4> Cart ({itemsCount}) Items </h4>
+          </Button>
         </Navbar.Collapse>
       </Navbar>
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Cart</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          {itemsCount > 0 ? (
-            <>
-              <p>Items in your cart:</p>
-              {cart.items.map((currentItem) => (
-                <CartProduct
-                  key={currentItem.id}
-                  item={currentItem.item}
-                  quantity={currentItem.quantity}
-                ></CartProduct>
-              ))}
+      <section className="container ">
+        <Modal
+          className="modal-dialog-scrollable "
+          show={show}
+          onHide={handleClose}
+        >
+          <Modal.Header closeButton>
+            <Modal.Title>
+              <h1 className="modal-title">Cart</h1>
+            </Modal.Title>
+          </Modal.Header>
+          <Modal.Body className="modal-color">
+            <Form noValidate>
+              <FormLabel for="text">Deliver To: </FormLabel>
+              <div className="input-group">
+                <div className="input-group-text">Section</div>
+                <input
+                  type="text"
+                  id="text"
+                  className="form-control"
+                  placeholder="Section Number"
+                  required
+                />
 
-              <h2>{`Total: $ ${getTotalCost(cart.items).toFixed(2)}`}</h2>
-              <Button variant="success" onClick={checkout}>
-                Purchase items!
-              </Button>
-            </>
-          ) : (
-            <h2>There are no items in your cart!</h2>
-          )}
-        </Modal.Body>
-      </Modal>
-    </>
+                <div className="input-group-text">Seat</div>
+                <input
+                  type="number"
+                  id="text"
+                  className="form-control"
+                  placeholder="Seat Number"
+                  required
+                />
+              </div>
+            </Form>
+            <br />
+            {itemsCount > 0 ? (
+              <>
+                <h5>Items in your cart: </h5>
+                <br />
+                {cart.items.map((currentItem) => (
+                  <CartProduct
+                    key={currentItem.id}
+                    item={currentItem.item}
+                    quantity={currentItem.quantity}
+                  ></CartProduct>
+                ))}
+
+                <h2>{`Total: $ ${getTotalCost(cart.items).toFixed(2)}`}</h2>
+                <Button variant="success" onClick={checkout}>
+                  Purchase items!
+                </Button>
+              </>
+            ) : (
+              <h2>There are no items in your cart!</h2>
+            )}
+          </Modal.Body>
+        </Modal>
+      </section>
+    </header>
   );
 };
 

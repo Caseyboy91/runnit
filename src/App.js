@@ -23,14 +23,14 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/bar" element={<Bar />} />
-            <Route path="/concession" element={<Concession />} />
-            <Route path="/merch" element={<Merch />} />
+            {/* <Route path="/concession" element={<Concession />} />
+            <Route path="/merch" element={<Merch />} /> */}
             <Route path="/success" element={<Success />} />
             <Route path="/cancel" element={<Cancel />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
-        <Footer />
+        {/* <Footer /> */}
       </Container>
     </CartProvider>
   );

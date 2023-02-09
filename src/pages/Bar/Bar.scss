@@ -1,39 +1,15 @@
-// @use "../../styles/partials/global" as *;
-// @use "../../styles/partials/variables" as *;
-// @use "../../styles/partials/resets" as *;
-// @use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/resets" as *;
+@use "../../styles/partials/mixins" as *;
 
-// .item {
-//   display: flex;
-//   flex-wrap: wrap;
+.page-title {
+  background-color: rgb(236, 233, 233);
+  color: rgb(55, 54, 54);
+  border-radius: 0.5rem;
+  font-size: 3rem;
+}
 
-//   &__container {
-//     @include items;
-//     border: 1px solid grey;
-//     border-radius: 2rem;
-//     margin: 2rem auto;
-//     width: 30rem;
-//   }
-
-//   &__name {
-//     text-align: center;
-//   }
-
-//   &__image {
-//     width: 10rem;
-//   }
-
-//   &__description {
-//     text-align: center;
-//   }
-
-//   &__price {
-//     text-align: center;
-//   }
-// }
-
-// .quantity {
-//   &__container {
-//     @include items;
-//   }
-// }
+section {
+  background-color: rgb(236, 233, 233);
+}
