@@ -13,13 +13,17 @@ const ItemCard = ({ item }) => {
         <Card.Title>
           <h2 className="itemText">{item.name}</h2>
         </Card.Title>
+
         <Card.Img src={item.image} />
+        <hr></hr>
         <Card.Text>
           <h3 className="itemText">{item.description}</h3>
         </Card.Text>
+        <hr></hr>
         <Card.Text>
           <h3 className="itemText">${item.price}</h3>
         </Card.Text>
+
         {itemQuantity > 0 ? (
           <>
             <Form as={Row}>
@@ -30,7 +34,6 @@ const ItemCard = ({ item }) => {
               <Col sm="6">
                 <div className="btn-group">
                   <Button
-                    sm=""
                     onClick={() => cart.addOneToCart(item.id)}
                     className="mx-2 "
                   >
@@ -38,7 +41,6 @@ const ItemCard = ({ item }) => {
                   </Button>
                   {<br />}
                   <Button
-                    sm="6"
                     onClick={() => cart.removeOneFromCart(item.id)}
                     className="mx-2 "
                   >

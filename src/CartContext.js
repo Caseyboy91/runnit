@@ -27,7 +27,7 @@ export function CartProvider({ children }) {
   async function addOneToCart(id) {
     const quantity = getItemQuantity(id);
 
-    let { data: barItems } = await axios.get("/bar");
+    let { data: barItems } = await axios.get("/items");
     const item = barItems.find((item) => item.id === id);
 
     if (quantity === 0) {

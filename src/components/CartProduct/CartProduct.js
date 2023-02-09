@@ -5,14 +5,12 @@ import "./CartProduct.scss";
 
 function CartProduct({ quantity, item }) {
   const cart = useContext(CartContext);
-  const itemData = item.id;
-  console.log(item);
 
   return (
-    <section className="container">
+    <section>
       <div className="row">
-        <div className="col">
-          <h3 className="">{item.name}</h3>
+        <div className="col ">
+          <h3>{item.name}</h3>
           <img className="modal-img" src={item.image} alt={item.name} />
           <h5>{quantity} total</h5>
           <h6>${(quantity * item.price).toFixed(2)}</h6>

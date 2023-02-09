@@ -3,14 +3,14 @@
 @use "../../styles/partials/resets" as *;
 @use "../../styles/partials/mixins" as *;
 
-.inCart {
-  font-weight: bold;
-}
-
 .itemCard {
-  background-color: rgb(125, 123, 123);
+  // background-color: rgb(125, 123, 123);
 }
 
 .itemText {
-  color: white;
+  // color: white;
+}
+
+.card-img {
+  padding-bottom: 1rem;
 }

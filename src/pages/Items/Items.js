@@ -2,29 +2,29 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { Row, Col } from "react-bootstrap";
 import ItemCard from "../../components/ItemCard/ItemCard";
-import "./Bar.scss";
+import "./Items.scss";
 
-const Bar = () => {
+const Items = () => {
   useEffect(() => {
-    document.title = "Runnit | Bar";
+    document.title = "Runnit | Items";
   });
 
-  const [barData, setBarData] = useState([{}]);
+  const [itemData, setItemData] = useState([{}]);
 
   useEffect(() => {
-    const getBarItems = async () => {
+    const getItems = async () => {
       try {
-        let { data: barItems } = await axios.get("/bar");
+        let { data: items } = await axios.get("/items");
 
-        setBarData(barItems);
+        setItemData(items);
       } catch (error) {
         console.error(error);
       }
     };
-    getBarItems();
+    getItems();
   }, []);
 
-  if (!barData) {
+  if (!itemData) {
     return <div>Loading Items ...</div>;
   }
 
@@ -37,7 +37,7 @@ const Bar = () => {
       </header>
       <main className="container">
         <Row xs={2} md={4} lg={6} className="g-4">
-          {barData.map((item) => (
+          {itemData.map((item) => (
             <Col align="center" key={item.id}>
               <ItemCard item={item} />
             </Col>
@@ -48,4 +48,4 @@ const Bar = () => {
   );
 };
 
-export default Bar;
+export default Items;

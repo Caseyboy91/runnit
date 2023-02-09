@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import {
   Button,
   Container,
@@ -10,7 +9,7 @@ import {
 import { useState, useContext } from "react";
 import { CartContext } from "../../CartContext";
 import CartProduct from "../CartProduct/CartProduct";
-import logo from "../../Assets/images/Runnit-1.png";
+import logo from "../../Assets/images/Runnit-2.png";
 import "./Header.scss";
 
 const Header = () => {
@@ -48,7 +47,7 @@ const Header = () => {
         <Navbar.Toggle />
         <Navbar.Collapse className="justify-content-end">
           <Button className="button-header btn-lg" onClick={handleShow}>
-            <h4> Cart ({itemsCount}) Items </h4>
+            <h4> Cart ({itemsCount}) </h4>
           </Button>
         </Navbar.Collapse>
       </Navbar>
@@ -65,7 +64,7 @@ const Header = () => {
           </Modal.Header>
           <Modal.Body className="modal-color">
             <Form noValidate>
-              <FormLabel for="text">Deliver To: </FormLabel>
+              <FormLabel for="text">Deliver To </FormLabel>
               <div className="input-group">
                 <div className="input-group-text bg-primary text-white">
                   Sec
@@ -90,11 +89,13 @@ const Header = () => {
                 />
               </div>
             </Form>
-            <br />
+            <hr></hr>
+
             {itemsCount > 0 ? (
               <>
                 <h4>Items in your cart: </h4>
                 <br />
+
                 {cart.items.map((currentItem) => (
                   <CartProduct
                     key={currentItem.id}
