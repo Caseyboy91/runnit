@@ -12,9 +12,20 @@
 }
 
 .modal-color {
-  background-color: rgb(207, 203, 203);
+  background-color: rgb(236, 233, 233);
 }
 
 .container {
   background-color: rgb(236, 233, 233);
+}
+
+.modal-title {
+  background-color: rgb(13 110 253);
+  color: white;
+}
+
+.form-label {
+  display: flex;
+  justify-content: center;
+  font-size: large;
 }

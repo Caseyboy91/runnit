@@ -58,16 +58,18 @@ const Header = () => {
           show={show}
           onHide={handleClose}
         >
-          <Modal.Header closeButton>
+          <Modal.Header className="modal-title" closeButton>
             <Modal.Title>
-              <h1 className="modal-title">Cart</h1>
+              <h1>Cart</h1>
             </Modal.Title>
           </Modal.Header>
           <Modal.Body className="modal-color">
             <Form noValidate>
               <FormLabel for="text">Deliver To: </FormLabel>
               <div className="input-group">
-                <div className="input-group-text">Section</div>
+                <div className="input-group-text bg-primary text-white">
+                  Sec
+                </div>
                 <input
                   type="text"
                   id="text"
@@ -76,7 +78,9 @@ const Header = () => {
                   required
                 />
 
-                <div className="input-group-text">Seat</div>
+                <div className="input-group-text bg-primary text-white">
+                  Seat
+                </div>
                 <input
                   type="number"
                   id="text"
@@ -89,7 +93,7 @@ const Header = () => {
             <br />
             {itemsCount > 0 ? (
               <>
-                <h5>Items in your cart: </h5>
+                <h4>Items in your cart: </h4>
                 <br />
                 {cart.items.map((currentItem) => (
                   <CartProduct
