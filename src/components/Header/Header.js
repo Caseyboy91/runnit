@@ -62,9 +62,9 @@ const Header = () => {
               <>
                 <h2>Items in your cart: </h2>
 
-                <hr></hr>
                 {cart.items.map((currentItem) => (
                   <section className="cart-product">
+                    <hr></hr>
                     <CartProduct
                       key={currentItem.id}
                       item={currentItem.item}
@@ -73,6 +73,7 @@ const Header = () => {
                   </section>
                 ))}
 
+                <hr></hr>
                 <Form noValidate>
                   <FormLabel for="text">Deliver To </FormLabel>
                   <div className="input-group">
@@ -100,11 +101,12 @@ const Header = () => {
                   </div>
                 </Form>
                 <hr></hr>
-
-                <h2>{`Total: $ ${getTotalCost(cart.items).toFixed(2)}`}</h2>
-                <Button variant="success" onClick={checkout}>
-                  Purchase items!
-                </Button>
+                <div className="purchase">
+                  <h2>{`Total: $ ${getTotalCost(cart.items).toFixed(2)}`}</h2>
+                  <Button variant="success" onClick={checkout}>
+                    Purchase items!
+                  </Button>
+                </div>
               </>
             ) : (
               <h2>There are no items in your cart!</h2>

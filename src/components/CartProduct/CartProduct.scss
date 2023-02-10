@@ -3,6 +3,19 @@
 @use "../../styles/partials/resets" as *;
 @use "../../styles/partials/mixins" as *;
 
+.cartProduct {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+
+  &__left,
+  &__right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
 .modal-img {
-  width: 5rem;
+  width: 6rem;
 }
