@@ -1,11 +1,22 @@
+import "./Footer.scss";
+
 const Footer = () => {
   return (
-    <footer>
-      <div>
-        <h3>Contact</h3>
-        <h3>Support</h3>
-      </div>
-    </footer>
+    <>
+      <footer className="container footer">
+        <div className="contact">
+          <h4 className="contact__title">Contact Us</h4>
+          <a className="contact__text" href="mailto:contact@werunnit.com">
+            contact@werunnit.com
+          </a>
+        </div>
+
+        <div className="support ">
+          <h4 className="support__title">Support</h4>
+          <a className="support__text">FAQ</a>
+        </div>
+      </footer>
+    </>
   );
 };
 

@@ -1,8 +1,46 @@
-@use "../../styles/partials/global" as *;
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/resets" as *;
-@use "../../styles/partials/mixins" as *;
+
+img.card-img {
+  width: 12rem;
+  border: 1px solid $background-color-dark-header;
+}
+
+.card {
+  box-shadow: $box-shadow;
+
+  &__section > .card {
+    border-color: $background-color-dark;
+    color: $text-color;
+  }
+
+  &__body {
+    background-color: $background-color-dark;
+  }
+
+  &__title {
+    font-weight: bold;
+    padding-bottom: 1rem;
+  }
+
+  &__price {
+    font-weight: bold;
+    font-size: 2rem;
+  }
+}
 
 .inCart {
-  font-weight: bold;
+  &__title {
+    font-size: 1.75rem;
+  }
+}
+
+.card-btn {
+  width: 100%;
+  box-shadow: $box-shadow;
+}
+
+.mx-2 {
+  box-shadow: $box-shadow;
+  margin-bottom: 1rem;
 }

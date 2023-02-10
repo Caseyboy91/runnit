@@ -3,9 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Container } from "react-bootstrap";
 import Header from "./components/Header/Header";
 import Home from "./pages/Home/Home";
-import Bar from "./pages/Bar/Bar";
-import Concession from "./pages/Concession/Concession";
-import Merch from "./pages/Merch/Merch";
+import Items from "./pages/Items/Items";
 import Success from "./pages/Success/Success";
 import Cancel from "./pages/Cancel/Cancel";
 import NotFound from "./pages/NotFound/NotFound";
@@ -22,9 +20,7 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/bar" element={<Bar />} />
-            <Route path="/concession" element={<Concession />} />
-            <Route path="/merch" element={<Merch />} />
+            <Route path="/items" element={<Items />} />
             <Route path="/success" element={<Success />} />
             <Route path="/cancel" element={<Cancel />} />
             <Route path="*" element={<NotFound />} />

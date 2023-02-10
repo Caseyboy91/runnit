@@ -1,0 +1,18 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/resets" as *;
+
+.button {
+  margin-top: 27vh;
+  margin-bottom: 28vh;
+  width: 15rem;
+  height: 15rem;
+  box-shadow: $box-shadow;
+}
+.runnit {
+  padding-top: 4rem;
+  padding-bottom: 5rem;
+
+  &__title {
+    font-size: 5rem;
+  }
+}

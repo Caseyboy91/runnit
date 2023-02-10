@@ -8,52 +8,68 @@ const ItemCard = ({ item }) => {
   const itemQuantity = cart.getItemQuantity(item.id);
 
   return (
-    <Card>
-      <Card.Body>
-        <Card.Title>{item.name}</Card.Title>
-        <Card.Img src={item.image} />
-        <Card.Text>{item.description}</Card.Text>
-        <Card.Text>${item.price}</Card.Text>
-        {itemQuantity > 0 ? (
-          <>
-            <Form as={Row}>
-              <Form.Label className="inCart" column="true" sm="6">
-                In Cart: {itemQuantity}
-              </Form.Label>
+    <section className="card__section">
+      <Card>
+        <Card.Body className="card__body">
+          <Card.Title>
+            <h2 className=" card__title">{item.name}</h2>
+          </Card.Title>
 
-              <Col sm="6">
-                <Button
-                  sm="6"
-                  onClick={() => cart.addOneToCart(item.id)}
-                  className="mx-2 d-block gap-2 mx-auto"
-                >
-                  +
-                </Button>
-                {<br />}
-                <Button
-                  sm="6"
-                  onClick={() => cart.removeOneFromCart(item.id)}
-                  className="mx-2 d-block gap-2 mx-auto"
-                >
-                  -
-                </Button>
-              </Col>
-            </Form>
+          <Card.Img src={item.image} />
+          <hr></hr>
+          <Card.Text>
+            <h3>{item.description}</h3>
+          </Card.Text>
+          <hr></hr>
+          <Card.Text>
+            <h3 className="card__price">${item.price}</h3>
+          </Card.Text>
+
+          {itemQuantity > 0 ? (
+            <>
+              <Form as={Row}>
+                <Form.Label className="inCart" column="true" sm="6">
+                  <h3 className="inCart__title">In Cart: {itemQuantity}</h3>
+                </Form.Label>
+
+                <Col sm="6">
+                  <div className="btn-group">
+                    <Button
+                      onClick={() => cart.addOneToCart(item.id)}
+                      className="mx-2 "
+                    >
+                      <h3>+</h3>
+                    </Button>
+                    {<br />}
+                    <Button
+                      onClick={() => cart.removeOneFromCart(item.id)}
+                      className="mx-2 "
+                    >
+                      <h3>-</h3>
+                    </Button>
+                  </div>
+                </Col>
+              </Form>
+              <Button
+                variant="danger"
+                onClick={() => cart.deleteFromCart(item.id)}
+                className="my-2 card-btn"
+              >
+                <h3>Remove from Cart</h3>
+              </Button>
+            </>
+          ) : (
             <Button
-              variant="danger"
-              onClick={() => cart.deleteFromCart(item.id)}
-              className="my-2"
+              className="card-btn"
+              variant="primary"
+              onClick={() => cart.addOneToCart(item.id)}
             >
-              Remove from cart
+              <h3>Add to Cart</h3>
             </Button>
-          </>
-        ) : (
-          <Button variant="primary" onClick={() => cart.addOneToCart(item.id)}>
-            Add To Cart
-          </Button>
-        )}
-      </Card.Body>
-    </Card>
+          )}
+        </Card.Body>
+      </Card>
+    </section>
   );
 };
 

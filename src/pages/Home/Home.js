@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import "./Home.scss";
 
 const Home = () => {
   useEffect(() => {
@@ -7,21 +8,23 @@ const Home = () => {
   });
   return (
     <main>
-      <section className="home__container">
-        <div className="pickup">Pickup</div>
-        <div className="Delivery">Deliver</div>
+      <section className="container  btn-group gap-2 justify-content-evenly ">
+        <div className="pickup">
+          <Link to="/items">
+            <button className="button btn btn-primary btn-lg">
+              <h1>Deliver</h1>
+            </button>
+          </Link>
+        </div>
+        <div className="delivery">
+          <Link to="/items">
+            <button className="button btn btn-primary btn-lg">
+              <h1>Pickup</h1>
+            </button>
+          </Link>
+        </div>
       </section>
-      <section className="menu__container">
-        <Link to="/bar">
-          <div className="bar">Bar</div>
-        </Link>
-        <Link to="/concession">
-          <div className="concession">Concession</div>
-        </Link>
-        <Link to="/merch">
-          <div className="merch">Merch</div>
-        </Link>
-      </section>
+      <hr></hr>
     </main>
   );
 };
