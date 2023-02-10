@@ -1,8 +1,13 @@
 import "./Cancel.scss";
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 const Cancel = () => {
+  useEffect(() => {
+    document.title = "Runnit | Cancel";
+  });
+
   return (
     <section className="container cancel">
       <h1 className="cancel__text">

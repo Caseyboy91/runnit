@@ -29,15 +29,15 @@ const Items = () => {
   }
 
   return (
-    <section>
+    <section className="items">
       <div className="container">
-        <header className="container items-header">
-          <h1 align="center" className="p-3 page-title">
+        <header className="container items__header">
+          <h1 align="center" className="p-3 items__title">
             ITEMS
           </h1>
         </header>
       </div>
-      <main className="container">
+      <main className="container main">
         <Row xs={2} md={4} lg={6} className="g-4">
           {itemData.map((item) => (
             <Col align="center" key={item.id}>
@@ -46,7 +46,6 @@ const Items = () => {
           ))}
         </Row>
       </main>
-      <hr></hr>
     </section>
   );
 };

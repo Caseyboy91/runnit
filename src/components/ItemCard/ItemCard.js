@@ -10,26 +10,26 @@ const ItemCard = ({ item }) => {
   return (
     <section className="card__section">
       <Card>
-        <Card.Body className="itemCard">
+        <Card.Body className="card__body">
           <Card.Title>
-            <h2 className="itemText itemText__title">{item.name}</h2>
+            <h2 className=" card__title">{item.name}</h2>
           </Card.Title>
 
           <Card.Img src={item.image} />
           <hr></hr>
           <Card.Text>
-            <h3 className="itemText">{item.description}</h3>
+            <h3>{item.description}</h3>
           </Card.Text>
           <hr></hr>
           <Card.Text>
-            <h3 className="itemText itemText__price">${item.price}</h3>
+            <h3 className="card__price">${item.price}</h3>
           </Card.Text>
 
           {itemQuantity > 0 ? (
             <>
               <Form as={Row}>
                 <Form.Label className="inCart" column="true" sm="6">
-                  <h3>In Cart: {itemQuantity}</h3>
+                  <h3 className="inCart__title">In Cart: {itemQuantity}</h3>
                 </Form.Label>
 
                 <Col sm="6">

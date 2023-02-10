@@ -29,38 +29,46 @@ const Header = () => {
       });
   };
 
+  function getTotalCost(items) {
+    return items.reduce((sum, item) => {
+      const unitCost = item.item.price;
+      return sum + unitCost * item.quantity;
+    }, 0);
+  }
+
   const itemsCount = cart.items.reduce((sum, item) => sum + item.quantity, 0);
 
   return (
     <header className="container header">
       <Navbar>
         <Navbar.Brand href="/">
-          <img src={logo} alt="runnit" className="logo" />
+          <img src={logo} alt="runnit" className="header__logo" />
         </Navbar.Brand>
         <Navbar.Toggle />
         <Navbar.Collapse className="justify-content-end">
-          <Button className="button-header btn-lg" onClick={handleShow}>
+          <Button className="header__btn btn-lg" onClick={handleShow}>
             <h4> Cart ({itemsCount}) </h4>
           </Button>
         </Navbar.Collapse>
       </Navbar>
       <hr></hr>
+
       {/* cart */}
-      <section className="container modal-container">
+      <section className="container modal">
         <Modal
           className="modal-dialog-scrollable "
           show={show}
           onHide={handleClose}
         >
-          <Modal.Header className="modal-title" closeButton>
+          <Modal.Header className="modal__title" closeButton>
             <Modal.Title>
-              <h1>Cart</h1>
+              <h1 className="modal__title-text">Cart</h1>
             </Modal.Title>
           </Modal.Header>
-          <Modal.Body className="modal-color">
+          <Modal.Body className="modal__body">
             {itemsCount > 0 ? (
               <>
-                <h2>Items in your cart: </h2>
+                <h2 className="modal__body-title">Items in your cart: </h2>
 
                 {cart.items.map((currentItem) => (
                   <section className="cart-product">
@@ -72,9 +80,13 @@ const Header = () => {
                     ></CartProduct>
                   </section>
                 ))}
+
                 <hr></hr>
-                <Form noValidate>
-                  <FormLabel for="text">Deliver To </FormLabel>
+
+                <Form className="form" noValidate>
+                  <FormLabel className="form__title" for="text">
+                    Deliver To{" "}
+                  </FormLabel>
                   <div className="input-group">
                     <div className="input-group-text bg-primary text-white">
                       Sec
@@ -86,7 +98,6 @@ const Header = () => {
                       placeholder="Section Number"
                       required
                     />
-
                     <div className="input-group-text bg-primary text-white">
                       Seat
                     </div>
@@ -99,7 +110,9 @@ const Header = () => {
                     />
                   </div>
                 </Form>
+
                 <hr></hr>
+
                 <div className="purchase">
                   <h2>{`Total: $ ${getTotalCost(cart.items).toFixed(2)}`}</h2>
                   <Button variant="success" onClick={checkout}>
@@ -116,12 +129,5 @@ const Header = () => {
     </header>
   );
 };
-
-function getTotalCost(items) {
-  return items.reduce((sum, item) => {
-    const unitCost = item.item.price;
-    return sum + unitCost * item.quantity;
-  }, 0);
-}
 
 export default Header;

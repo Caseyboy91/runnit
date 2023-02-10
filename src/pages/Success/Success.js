@@ -1,6 +1,11 @@
 import runnitQr from "../../Assets/images/runnit-qr.png";
+import { useEffect } from "react";
 import "./Success.scss";
+
 const Success = () => {
+  useEffect(() => {
+    document.title = "Runnit | Success";
+  });
   return (
     <section className="container qr">
       <div className="qr__text">
