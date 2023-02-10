@@ -1,17 +1,18 @@
-@use "../../styles/partials/global" as *;
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/resets" as *;
-@use "../../styles/partials/mixins" as *;
 
 header.items-header {
-  background-color: #8a8989;
+  background-color: $background-color-dark-header;
   margin-bottom: 1.75rem;
   border-radius: 0.5rem;
-  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: $box-shadow;
 }
 
 .page-title {
-  font-size: 3rem;
+  font-size: 2.5rem;
+  color: $text-color;
+}
 
-  color: white;
+main {
+  padding-bottom: 5rem;
 }

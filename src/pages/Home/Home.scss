@@ -1,14 +1,12 @@
-@use "../../styles/partials/global" as *;
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/resets" as *;
-@use "../../styles/partials/mixins" as *;
 
 .button {
   margin-top: 27vh;
   margin-bottom: 28vh;
   width: 15rem;
   height: 15rem;
-  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.3);
+  box-shadow: $box-shadow;
 }
 .runnit {
   padding-top: 4rem;

@@ -1,4 +1,35 @@
+@use "./styles/partials/variables";
+@use "./styles/partials/resets";
 @import "~bootstrap/scss/bootstrap";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-color: #d5d2d2;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+}
 
 .container {
   background-color: #d5d2d2;

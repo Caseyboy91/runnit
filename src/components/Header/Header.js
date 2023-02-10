@@ -32,7 +32,7 @@ const Header = () => {
   const itemsCount = cart.items.reduce((sum, item) => sum + item.quantity, 0);
 
   return (
-    <header className="container ">
+    <header className="container header">
       <Navbar>
         <Navbar.Brand href="/">
           <img src={logo} alt="runnit" className="logo" />
@@ -44,7 +44,7 @@ const Header = () => {
           </Button>
         </Navbar.Collapse>
       </Navbar>
-
+      <hr></hr>
       {/* cart */}
       <section className="container modal-container">
         <Modal
@@ -72,7 +72,6 @@ const Header = () => {
                     ></CartProduct>
                   </section>
                 ))}
-
                 <hr></hr>
                 <Form noValidate>
                   <FormLabel for="text">Deliver To </FormLabel>

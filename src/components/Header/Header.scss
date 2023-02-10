@@ -1,17 +1,15 @@
-@use "../../styles/partials/global" as *;
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/resets" as *;
-@use "../../styles/partials/mixins" as *;
 
 .logo {
   width: 7rem;
-  border-radius: 7%;
-  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0.5rem;
+  box-shadow: $box-shadow;
 }
 
 .button-header {
   height: 7rem;
-  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: $box-shadow;
 }
 
 .modal-color {
@@ -19,8 +17,8 @@
 }
 
 .modal-title {
-  background-color: #727272;
-  color: white;
+  background-color: $background-color-dark;
+  color: $text-color;
 }
 
 .form-label {
@@ -30,8 +28,8 @@
 }
 
 .purchase {
-  background-color: #727272;
-  color: white;
+  background-color: $background-color-dark;
+  color: $text-color;
   text-align: center;
   padding: 1rem;
 }

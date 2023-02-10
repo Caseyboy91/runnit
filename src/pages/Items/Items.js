@@ -30,7 +30,6 @@ const Items = () => {
 
   return (
     <section>
-      <hr></hr>
       <div className="container">
         <header className="container items-header">
           <h1 align="center" className="p-3 page-title">

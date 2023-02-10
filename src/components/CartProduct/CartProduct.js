@@ -9,12 +9,15 @@ function CartProduct({ quantity, item }) {
   return (
     <section className="container cartProduct">
       <div className="cartProduct__left">
-        <h3>{item.name}</h3>
-        <img className="modal-img" src={item.image} alt={item.name} />
+        <h3 className="cartProduct__title">{item.name}</h3>
+        <img className="cartProduct__img" src={item.image} alt={item.name} />
       </div>
+      <div className="divider"></div>
       <div className="cartProduct__right">
-        <h3>{quantity} total</h3>
-        <h4>${(quantity * item.price).toFixed(2)}</h4>
+        <h3 className="cartProduct__quantity">{quantity} total</h3>
+        <h4 className="cartProduct__price">
+          ${(quantity * item.price).toFixed(2)}
+        </h4>
 
         <div className="btn-group">
           <Button onClick={() => cart.addOneToCart(item.id)} className="mx-2 ">

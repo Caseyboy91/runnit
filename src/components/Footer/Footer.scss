@@ -1,13 +1,10 @@
-@use "../../styles/partials/global" as *;
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/resets" as *;
-@use "../../styles/partials/mixins" as *;
 
 .footer {
   display: flex;
   justify-content: space-between;
-  padding-top: 1rem;
-  padding-bottom: 2rem;
+  padding-top: 0.75rem;
 }
 
 .support,
@@ -17,8 +14,8 @@
   align-items: baseline;
 
   &__text {
-    padding-left: 1rem;
     text-decoration: none;
     font-size: 1.2rem;
+    padding: 0 1rem;
   }
 }

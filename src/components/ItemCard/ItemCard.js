@@ -12,7 +12,7 @@ const ItemCard = ({ item }) => {
       <Card>
         <Card.Body className="itemCard">
           <Card.Title>
-            <h2 className="itemText">{item.name}</h2>
+            <h2 className="itemText itemText__title">{item.name}</h2>
           </Card.Title>
 
           <Card.Img src={item.image} />
@@ -22,7 +22,7 @@ const ItemCard = ({ item }) => {
           </Card.Text>
           <hr></hr>
           <Card.Text>
-            <h3 className="itemText">${item.price}</h3>
+            <h3 className="itemText itemText__price">${item.price}</h3>
           </Card.Text>
 
           {itemQuantity > 0 ? (

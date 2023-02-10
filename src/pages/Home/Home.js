@@ -8,7 +8,6 @@ const Home = () => {
   });
   return (
     <main>
-      <hr></hr>
       <section className="container  btn-group gap-2 justify-content-evenly ">
         <div className="pickup">
           <Link to="/items">

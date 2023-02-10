@@ -2,8 +2,8 @@ import "./Footer.scss";
 
 const Footer = () => {
   return (
-    <footer>
-      <div className="container footer">
+    <>
+      <footer className="container footer">
         <div className="contact">
           <h4>Contact Us</h4>
           <a className="contact__text" href="mailto:contact@werunnit.com">
@@ -15,8 +15,8 @@ const Footer = () => {
           <h4>Support</h4>
           <a className="support__text">FAQ</a>
         </div>
-      </div>
-    </footer>
+      </footer>
+    </>
   );
 };
 
