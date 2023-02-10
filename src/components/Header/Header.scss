@@ -6,23 +6,21 @@
 .logo {
   width: 7rem;
   border-radius: 7%;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 .button-header {
   height: 7rem;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 .modal-color {
-  // background-color: rgb(236, 233, 233);
-}
-
-.container {
-  // background-color: rgb(236, 233, 233);
+  background-color: $background-color;
 }
 
 .modal-title {
-  // background-color: #0d6efd;
-  // color: white;
+  background-color: #727272;
+  color: white;
 }
 
 .form-label {

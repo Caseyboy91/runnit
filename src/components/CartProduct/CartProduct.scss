@@ -1,3 +1,8 @@
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/resets" as *;
+@use "../../styles/partials/mixins" as *;
+
 .modal-img {
   width: 5rem;
 }

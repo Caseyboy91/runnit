@@ -1,11 +1,4 @@
-import {
-  Button,
-  Container,
-  Navbar,
-  Modal,
-  Form,
-  FormLabel,
-} from "react-bootstrap";
+import { Button, Navbar, Modal, Form, FormLabel } from "react-bootstrap";
 import { useState, useContext } from "react";
 import { CartContext } from "../../CartContext";
 import CartProduct from "../CartProduct/CartProduct";
@@ -51,7 +44,9 @@ const Header = () => {
           </Button>
         </Navbar.Collapse>
       </Navbar>
-      <section className="container ">
+
+      {/* cart */}
+      <section className="container modal-container">
         <Modal
           className="modal-dialog-scrollable "
           show={show}
@@ -63,46 +58,48 @@ const Header = () => {
             </Modal.Title>
           </Modal.Header>
           <Modal.Body className="modal-color">
-            <Form noValidate>
-              <FormLabel for="text">Deliver To </FormLabel>
-              <div className="input-group">
-                <div className="input-group-text bg-primary text-white">
-                  Sec
-                </div>
-                <input
-                  type="text"
-                  id="text"
-                  className="form-control"
-                  placeholder="Section Number"
-                  required
-                />
-
-                <div className="input-group-text bg-primary text-white">
-                  Seat
-                </div>
-                <input
-                  type="number"
-                  id="text"
-                  className="form-control"
-                  placeholder="Seat Number"
-                  required
-                />
-              </div>
-            </Form>
-            <hr></hr>
-
             {itemsCount > 0 ? (
               <>
-                <h4>Items in your cart: </h4>
-                <br />
+                <h2>Items in your cart: </h2>
 
+                <hr></hr>
                 {cart.items.map((currentItem) => (
-                  <CartProduct
-                    key={currentItem.id}
-                    item={currentItem.item}
-                    quantity={currentItem.quantity}
-                  ></CartProduct>
+                  <section className="cart-product">
+                    <CartProduct
+                      key={currentItem.id}
+                      item={currentItem.item}
+                      quantity={currentItem.quantity}
+                    ></CartProduct>
+                  </section>
                 ))}
+
+                <Form noValidate>
+                  <FormLabel for="text">Deliver To </FormLabel>
+                  <div className="input-group">
+                    <div className="input-group-text bg-primary text-white">
+                      Sec
+                    </div>
+                    <input
+                      type="text"
+                      id="text"
+                      className="form-control"
+                      placeholder="Section Number"
+                      required
+                    />
+
+                    <div className="input-group-text bg-primary text-white">
+                      Seat
+                    </div>
+                    <input
+                      type="number"
+                      id="text"
+                      className="form-control"
+                      placeholder="Seat Number"
+                      required
+                    />
+                  </div>
+                </Form>
+                <hr></hr>
 
                 <h2>{`Total: $ ${getTotalCost(cart.items).toFixed(2)}`}</h2>
                 <Button variant="success" onClick={checkout}>

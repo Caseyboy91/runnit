@@ -30,11 +30,14 @@ const Items = () => {
 
   return (
     <section>
-      <header className="container">
-        <h1 align="center" className="p-3 page-title">
-          Items
-        </h1>
-      </header>
+      <hr></hr>
+      <div className="container">
+        <header className="container items-header">
+          <h1 align="center" className="p-3 page-title">
+            ITEMS
+          </h1>
+        </header>
+      </div>
       <main className="container">
         <Row xs={2} md={4} lg={6} className="g-4">
           {itemData.map((item) => (
@@ -44,6 +47,7 @@ const Items = () => {
           ))}
         </Row>
       </main>
+      <hr></hr>
     </section>
   );
 };

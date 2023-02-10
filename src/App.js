@@ -7,7 +7,7 @@ import Items from "./pages/Items/Items";
 import Success from "./pages/Success/Success";
 import Cancel from "./pages/Cancel/Cancel";
 import NotFound from "./pages/NotFound/NotFound";
-
+import Footer from "./components/Footer/Footer";
 import CartProvider from "./CartContext";
 import "./App.scss";
 
@@ -26,6 +26,7 @@ function App() {
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
+        <Footer />
       </Container>
     </CartProvider>
   );

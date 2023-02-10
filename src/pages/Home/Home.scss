@@ -4,12 +4,17 @@
 @use "../../styles/partials/mixins" as *;
 
 .button {
-  margin-top: 30vh;
-  margin-bottom: 10vh;
+  margin-top: 27vh;
+  margin-bottom: 28vh;
   width: 15rem;
   height: 15rem;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.3);
 }
+.runnit {
+  padding-top: 4rem;
+  padding-bottom: 5rem;
 
-main {
-  // background-color: rgb(236, 233, 233);
+  &__title {
+    font-size: 5rem;
+  }
 }
