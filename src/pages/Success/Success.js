@@ -1,4 +1,4 @@
-import runnitQr from "../../Assets/images/runnit-qr.png";
+import runnitQr from "../../Assets/images/qr-code.svg";
 import { useEffect } from "react";
 import "./Success.scss";
 

@@ -6,11 +6,21 @@
     width: 7rem;
     border-radius: 0.5rem;
     box-shadow: $box-shadow;
+
+    &:active {
+      box-shadow: none;
+      transform: translateY(0.4rem);
+    }
   }
 
   &__btn {
     height: 7rem;
     box-shadow: $box-shadow;
+
+    &:active {
+      box-shadow: none;
+      transform: translateY(0.4rem);
+    }
   }
 }
 
@@ -47,4 +57,12 @@
   color: $text-color;
   text-align: center;
   padding: 1rem;
+
+  &__btn {
+    box-shadow: $box-shadow;
+    &:active {
+      box-shadow: none;
+      transform: translateY(0.4rem);
+    }
+  }
 }

@@ -38,6 +38,11 @@ img.card-img {
 .card-btn {
   width: 100%;
   box-shadow: $box-shadow;
+
+  &:active {
+    box-shadow: none;
+    transform: translateY(0.4rem);
+  }
 }
 
 .mx-2 {
