@@ -11,8 +11,11 @@ const Header = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  const REACT_APP_BASE_API_URL = process.env.REACT_APP_BASE_API_URL;
+  const REACT_APP_API_PORT = process.env.REACT_APP_API_PORT;
+
   const checkout = async () => {
-    await fetch("http://localhost:5050/checkout", {
+    await fetch(`${REACT_APP_BASE_API_URL}${REACT_APP_API_PORT}/checkout`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -41,7 +41,8 @@ img.card-img {
 
   &:active {
     box-shadow: none;
-    transform: translateY(0.4rem);
+    transform: translateY(0.2rem);
+    transform: translateX(0.2rem);
   }
 }
 
