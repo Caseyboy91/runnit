@@ -6,6 +6,12 @@
     padding-top: 2rem;
   }
   &__btn {
+    box-shadow: $box-shadow;
     margin-top: 2rem;
+
+    &:active {
+      box-shadow: none;
+      transform: translateY(0.4rem);
+    }
   }
 }

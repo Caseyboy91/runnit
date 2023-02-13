@@ -115,7 +115,11 @@ const Header = () => {
 
                 <div className="purchase">
                   <h2>{`Total: $ ${getTotalCost(cart.items).toFixed(2)}`}</h2>
-                  <Button variant="success" onClick={checkout}>
+                  <Button
+                    className="purchase__btn btn-lg"
+                    variant="success"
+                    onClick={checkout}
+                  >
                     Purchase items!
                   </Button>
                 </div>

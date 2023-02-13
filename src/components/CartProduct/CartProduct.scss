@@ -37,3 +37,10 @@
   height: 10rem;
   margin-bottom: 1rem;
 }
+
+.btn-group {
+  :active {
+    box-shadow: none;
+    transform: translateY(0.4rem);
+  }
+}
