@@ -1,0 +1,11 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/resets" as *;
+
+.cancel {
+  &__text {
+    padding-top: 2rem;
+  }
+  &__btn {
+    margin-top: 2rem;
+  }
+}
