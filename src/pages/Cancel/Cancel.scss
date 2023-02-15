@@ -1,0 +1,18 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/resets" as *;
+
+.cancel {
+  &__text {
+    padding-top: 2rem;
+  }
+  &__btn {
+    box-shadow: $box-shadow;
+    margin-top: 2rem;
+
+    &:active {
+      box-shadow: none;
+      transform: translateY(0.2rem);
+      transform: translateX(0.2rem);
+    }
+  }
+}

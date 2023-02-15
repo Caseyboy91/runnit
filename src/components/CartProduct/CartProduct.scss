@@ -1,0 +1,47 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/resets" as *;
+
+.cartProduct {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+
+  &__left,
+  &__right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+  }
+
+  &__title {
+    font-weight: 500;
+  }
+
+  &__img {
+    width: 7rem;
+  }
+
+  &__quantity {
+    font-weight: 600;
+    padding-bottom: 1rem;
+  }
+
+  &__price {
+    padding-bottom: 1rem;
+  }
+}
+
+.divider {
+  border: 0.1rem solid #a5a5a5;
+  height: 10rem;
+  margin-bottom: 1rem;
+}
+
+.btn-group {
+  :active {
+    box-shadow: none;
+    transform: translateY(0.2rem);
+    transform: translateX(0.2rem);
+  }
+}

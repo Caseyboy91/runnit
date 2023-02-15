@@ -1,70 +1,133 @@
-# Getting Started with Create React App
+![Logo](https://i.imgur.com/1azMvM6.png)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Runnit
 
-## Available Scripts
+By scanning a QR code or NFC tag at a concert/event venue, you will be able to purchase drinks, concessions, and merchandise, through a mobile-view website, and have these items either delivered to your seat or picked up at will call by you.
 
-In the project directory, you can run:
+## Authors
 
-### `npm start`
+- [@caseyboy91](https://github.com/Caseyboy91)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🔗 Links
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/caseydavis91/)
 
-### `npm test`
+## Tech Stack
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**Client:** React, Sass, Bootstrap, Axios
 
-### `npm run build`
+**Server:** Node, Express, Stripe
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Support
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+For support, email contact@werunnit.com
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Screenshots
 
-### `npm run eject`
+Home Page:
+![App Screenshot](https://i.imgur.com/CgqhCdt.jpg)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Items Page:
+![App Screenshot](https://i.imgur.com/IrgWBve.jpg)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Cart:
+![App Screenshot](https://i.imgur.com/evqalfM.jpg)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Stripe Payment Page:
+![App Screenshot](https://i.imgur.com/m2rHH4u.jpg)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Success Page:
+![App Screenshot](https://i.imgur.com/4RoEFAT.jpg)
 
-## Learn More
+## Environment Variables
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+To run this project, you will need to add the following environment variables to your .env files
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+On Server Side:
+`PORT` will need to be defined for the server to listen on.
 
-### Code Splitting
+On Client Side:
+`REACT_APP_BASE_API_URL` will need to be set. Example: http://localhost:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+`REACT_APP_API_PORT` will need to be set to the same `PORT` as the server.
 
-### Analyzing the Bundle Size
+Create a `proxy` with the full url in `package.json` file.
+Example: `http://localhost:5050`. This will help with some connection issues.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Run Locally
 
-### Making a Progressive Web App
+Clone the project
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Client:
 
-### Advanced Configuration
+```bash
+  git clone https://github.com/Caseyboy91/runnit
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Server:
 
-### Deployment
+```bash
+  git clone https://github.com/Caseyboy91/runnit-api
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Go to the project directory
 
-### `npm run build` fails to minify
+Client:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```bash
+  cd client
+```
+
+Server:
+
+```bash
+  cd server
+```
+
+Install dependencies
+
+Client:
+
+```bash
+  npm install
+```
+
+Server:
+
+```bash
+  npm install
+```
+
+Start the app
+
+Client
+
+```bash
+  npm run start
+```
+
+Server
+
+```bash
+  npm run dev
+```
+
+App is best enjoyed in mobile view.
+
+## Roadmap
+
+- Profiles
+
+- Age Verification
+
+- ID Verification
+
+- Facial Verification
+
+- Back-end POS system
+
+- Geolocation
+
+## Feedback
+
+If you have any feedback, please reach out to us at contact@werunnit.com
